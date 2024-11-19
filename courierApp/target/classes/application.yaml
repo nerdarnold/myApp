@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: dev
+server:
+  servlet:
+    context-path: /api/v1
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+  application:
+    name: courierApp
+  datasource:
+    url: jdbc:h2:file:C:/Users/ata_y/courierdb;AUTO_SERVER=TRUE
+    driverClassName: org.h2.Driver
+    username: sa
+    password: pass
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
